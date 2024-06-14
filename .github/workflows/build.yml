@@ -71,7 +71,7 @@ jobs:
       - name: Verify mmdb files
         run: |
           cd ./output/maxmind || exit 1
-          go install -v github.com/maxmind/mmdbverify@latest
+          go install -v github.com/maxmind/mmdbverify@9f67706fd081a4eb901731ee7185c2e8e66eb70a
           for name in $(ls *.mmdb); do
             $(go env GOPATH)/bin/mmdbverify -file ${name}
           done
